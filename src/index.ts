@@ -33,3 +33,7 @@ export const createRequestClientDataThings = <TLang extends string>({ langs }: {
     getClientDataByRequest: (req: LikeRequest) => getClientDataByRequest({ req, langs }),
   }
 }
+
+export type RequestClientDataObject<TRequestClientData extends ReturnType<typeof getClientDataByRequest>> = {
+  clientData: TRequestClientData
+}
